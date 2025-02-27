@@ -6,7 +6,8 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("김태정이 만든 계산기입니다");
+        System.out.println("스파르타 개인 프로젝트");
+        System.out.println("------ 계산기 ------");
         String goStop;
 
 
