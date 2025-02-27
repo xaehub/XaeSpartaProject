@@ -11,7 +11,6 @@ public class Main {
         System.out.println("------ 계산기 ------");
         String goStop;
 
-
         while (true) {
             System.out.print("첫번째 수를 입력해 주세요: ");
             int a = sc.nextInt();
@@ -22,7 +21,7 @@ public class Main {
             char c = sc.next().charAt(0);
 
             cal.calculator(a, b, c);
-
+            System.out.println("연산 결과 리스트: " + cal.getList());
 
             while (true) {
                 System.out.println("더 계산하시겠습니까?");
