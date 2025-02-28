@@ -6,7 +6,7 @@ import java.util.List;
 public class Calculator {
 
     // 속성
-    private List<Integer> result_list = new ArrayList<>();  // 연산 결과를 저장할 리스트 result_list
+    private List<Integer> resultList = new ArrayList<>();  // 연산 결과를 저장할 리스트 result_list
 
 
     // 생성자
@@ -16,7 +16,7 @@ public class Calculator {
 
     // 기능
 
-    public int calculator(int a, int b, char c) {
+    public int calculate(int a, int b, char c) {
         int result = 0;
 
         if (c == '+') {
@@ -37,12 +37,31 @@ public class Calculator {
         }
 
         System.out.println("연산 결과: " + result);
-        result_list.add(result);
+//        addResultList(result);         // 내부 호출
         return result;
-        
+
     }
 
-    public List<Integer> getList() {
-        return result_list;
+
+//    String Name;
+//
+//    public String getName() {
+//        return Name;
+//    }
+//
+//    public void setName(String Name) {
+//        this.Name = Name;
+//    }
+
+
+    public List<Integer> getList() {        // 게터
+        return resultList;
     }
+
+    public void addResultList(Integer result) {       // 세터
+        resultList.add(result);
+    }
+
+
+
 }

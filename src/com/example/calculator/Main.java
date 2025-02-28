@@ -20,8 +20,15 @@ public class Main {
             System.out.print(" +  -  *  / 중 하나를 입력해 주세요: ");
             char c = sc.next().charAt(0);
 
-            cal.calculator(a, b, c);
-            System.out.println("연산 결과 리스트: " + cal.getList());
+
+
+//             cal.calculate(a, b, c);
+
+            int result = cal.calculate(a, b, c);  // 외부 호출
+
+            cal.addResultList(result);           // 외부 호출
+
+            System.out.println("연산 결과 리스트: " + cal.getList());       // 외부 호출
 
             while (true) {
                 System.out.println("더 계산하시겠습니까?");
@@ -36,7 +43,9 @@ public class Main {
                 } else {
                     System.out.println("잘못된 입력입니다. 다시 입력해 주세요");
                 }
+
             }
+
         }
     }
 }
