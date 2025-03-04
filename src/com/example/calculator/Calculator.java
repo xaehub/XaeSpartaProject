@@ -62,6 +62,10 @@ public class Calculator {
         resultList.add(result);
     }
 
+    public void deleteList() {          // 연산 결과 제거
+
+    }
+
 
 
 }

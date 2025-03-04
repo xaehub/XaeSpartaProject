@@ -24,11 +24,11 @@ public class Main {
 
 //             cal.calculate(a, b, c);
 
-            int result = cal.calculate(a, b, c);  // 외부 호출
+            int result = cal.calculate(a, b, c);  // 세터 외부 호출
 
-            cal.addResultList(result);           // 외부 호출
+            cal.addResultList(result);           // 세터 외부 호출
 
-            System.out.println("연산 결과 리스트: " + cal.getList());       // 외부 호출
+            System.out.println("연산 결과 리스트: " + cal.getList());       // 게터 외부 호출
 
             while (true) {
                 System.out.println("더 계산하시겠습니까?");
