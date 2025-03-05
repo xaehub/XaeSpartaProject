@@ -5,16 +5,11 @@ import java.util.List;
 
 public class Calculator {
 
-    // 속성
     private List<Integer> resultList = new ArrayList<>();  // 연산 결과를 저장할 리스트 result_list
 
-
-    // 생성자
     public Calculator() {
 
     }
-
-    // 기능
 
     public int calculate(int a, int b, char c) {
         int result = 0;
@@ -28,30 +23,17 @@ public class Calculator {
         } else if (c == '/') {
             if (b == 0) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다");
-                return 0;
+                return -1;
             } else {
                 result = a / b;
             }
         } else {
             System.out.println("올바른 기호가 아닙니다");
+            return -1;
         }
-
         System.out.println("연산 결과: " + result);
-//        addResultList(result);         // 내부 호출
         return result;
-
     }
-
-
-//    String Name;
-//
-//    public String getName() {
-//        return Name;
-//    }
-//
-//    public void setName(String Name) {
-//        this.Name = Name;
-//    }
 
 
     public List<Integer> getList() {        // 게터
@@ -63,9 +45,10 @@ public class Calculator {
     }
 
     public void deleteList() {          // 연산 결과 제거
-
+        if(resultList.isEmpty()) {
+            System.out.println("리스트에 삭제할 연산 결과가 없습니다.");
+        } else {
+            resultList.remove(0);
+        }
     }
-
-
-
 }

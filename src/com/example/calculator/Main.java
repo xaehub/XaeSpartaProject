@@ -20,15 +20,21 @@ public class Main {
             System.out.print(" +  -  *  / 중 하나를 입력해 주세요: ");
             char c = sc.next().charAt(0);
 
-
-
-//             cal.calculate(a, b, c);
-
             int result = cal.calculate(a, b, c);  // 세터 외부 호출
 
-            cal.addResultList(result);           // 세터 외부 호출
+            if (result != -1) {
+                cal.addResultList(result);
+            }
 
-            System.out.println("연산 결과 리스트: " + cal.getList());       // 게터 외부 호출
+            System.out.println("연산 결과 리스트: " + cal.getList());  // 게터 외부 호출
+
+            System.out.println("연산 결과를 삭제하시려면 del을 삭제할 연산 결과가 없다면 skip을 입력해 주세요. ");
+            String delSkip = sc.next();
+
+            if(delSkip.equals("del")) {
+                cal.deleteList();
+                System.out.println("삭제한 후 연산 결과 리스트: " + cal.getList());
+            }
 
             while (true) {
                 System.out.println("더 계산하시겠습니까?");
@@ -43,9 +49,7 @@ public class Main {
                 } else {
                     System.out.println("잘못된 입력입니다. 다시 입력해 주세요");
                 }
-
             }
-
         }
     }
 }
