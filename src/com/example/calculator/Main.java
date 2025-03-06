@@ -13,9 +13,9 @@ public class Main {
 
         while (true) {
             System.out.print("첫번째 수를 입력해 주세요: ");
-            int a = sc.nextInt();
+            double a = sc.nextDouble();
             System.out.print("두번째 수를 입력해 주세요: ");
-            int b = sc.nextInt();
+            double b = sc.nextDouble();
 
             System.out.print(" +  -  *  / 중 하나를 입력해 주세요: ");
             char c = sc.next().charAt(0);

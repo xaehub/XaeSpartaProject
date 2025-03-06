@@ -6,7 +6,7 @@
 
 
 ## 기능
-- 두 수를 입력받고, 사칙연산(덧셈, 뺄셈, 곱셈, 나눗셈)을 선택하여 계산.
+- 두 수(Integer, Double)를 입력받고, 사칙연산(덧셈, 뺄셈, 곱셈, 나눗셈)을 선택하여 계산.
 - 계산 결과를 출력.
 - 계산을 더 할지, 아니면 프로그램을 종료할지를 묻는 반복 기능.
 
@@ -19,10 +19,10 @@
 
    예시:
     ```java
-     if (c == '+') {   // +를 입력받음
-                int addResult = a + b; // 두 수를 더한 값을 addResult에 저장
-                System.out.println("두 수를 더한 값은: " + addResult); // 저장한 addResult 출력
-            }
+     if (c == '+') {                     // +를 입력받으면
+            result = a.doubleValue() + b.doubleValue(); // 계산 후
+        }
+     return (T) (Number) result;   // result 값으로 반환
     ```
 
 
