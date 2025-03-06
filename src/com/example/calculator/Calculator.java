@@ -3,44 +3,44 @@ package com.example.calculator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator {
+public class Calculator<T extends Number> {
 
-    private List<Integer> resultList = new ArrayList<>();  // 연산 결과를 저장할 리스트 result_list
+    private List<T> resultList = new ArrayList<>();  // 연산 결과를 저장할 리스트 result_list
 
     public Calculator() {
 
     }
 
-    public int calculate(int a, int b, char c) {
-        int result = 0;
+    public T calculate(T a, T b, char c) {
+        double result = 0;
 
         if (c == '+') {
-            result = a + b;
+            result = a.doubleValue() + b.doubleValue();
         } else if (c == '-') {
-            result = a - b;
+            result = a.doubleValue() - b.doubleValue();
         } else if (c == '*') {
-            result = a * b;
+            result = a.doubleValue() * b.doubleValue();
         } else if (c == '/') {
-            if (b == 0) {
+            if (b.doubleValue() == 0) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다");
-                return -1;
+                return null;
             } else {
-                result = a / b;
+                result = a.doubleValue() / b.doubleValue();
             }
         } else {
             System.out.println("올바른 기호가 아닙니다");
-            return -1;
+            return null;
         }
+
         System.out.println("연산 결과: " + result);
-        return result;
+        return (T) (Number) result;
     }
 
-
-    public List<Integer> getList() {        // 게터
+    public List<T> getList() {        // 게터
         return resultList;
     }
 
-    public void addResultList(Integer result) {       // 세터
+    public void addResultList(T result) {       // 세터
         resultList.add(result);
     }
 

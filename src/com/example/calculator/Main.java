@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator cal = new Calculator();
+        Calculator<Number> cal = new Calculator<>();
 
         System.out.println("스파르타 개인 프로젝트");
         System.out.println("------ 계산기 ------");
@@ -20,9 +20,9 @@ public class Main {
             System.out.print(" +  -  *  / 중 하나를 입력해 주세요: ");
             char c = sc.next().charAt(0);
 
-            int result = cal.calculate(a, b, c);  // 세터 외부 호출
+            Number result = cal.calculate(a, b, c);  // 세터 외부 호출
 
-            if (result != -1) {
+            if (result != null) {
                 cal.addResultList(result);
             }
 
