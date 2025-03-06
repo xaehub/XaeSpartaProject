@@ -3,15 +3,15 @@ package com.example.calculator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator<T extends Number> {
+public class Calculator<T extends Number> {          // 제네릭 클래스 T를 Number 클래스로 정의
 
-    private List<T> resultList = new ArrayList<>();  // 연산 결과를 저장할 리스트 result_list
+    private List<T> resultList = new ArrayList<>();  // 제네릭 타입 T를 사용한 연산 결과를 저장할 리스트 result_list
 
-    public Calculator() {
+    public Calculator() {                            // 생성자
 
     }
 
-    public T calculate(T a, T b, char c) {
+    public T calculate(T a, T b, char c) {          // calculate 메서드 선언 (제네릭 타입 T를 매개변수로 받음)
         double result = 0;
 
         if (c == '+') {
@@ -36,11 +36,11 @@ public class Calculator<T extends Number> {
         return (T) (Number) result;
     }
 
-    public List<T> getList() {        // 게터
+    public List<T> getList() {        // 리스트를 반환(게터)
         return resultList;
     }
 
-    public void addResultList(T result) {       // 세터
+    public void addResultList(T result) {       // 리스트에 결과값 추가(세터)
         resultList.add(result);
     }
 

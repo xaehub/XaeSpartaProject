@@ -13,27 +13,27 @@ public class Main {
 
         while (true) {
             System.out.print("첫번째 수를 입력해 주세요: ");
-            double a = sc.nextDouble();
+            double a = sc.nextDouble();                     // 실수형(double)타입 입력받기
             System.out.print("두번째 수를 입력해 주세요: ");
             double b = sc.nextDouble();
 
             System.out.print(" +  -  *  / 중 하나를 입력해 주세요: ");
-            char c = sc.next().charAt(0);
+            char c = sc.next().charAt(0);                   // 문자형(char)타입 입력받기
 
-            Number result = cal.calculate(a, b, c);  // 세터 외부 호출
+            Number result = cal.calculate(a, b, c);         // 세터 외부 호출
 
-            if (result != null) {
+            if (result != null) {                           // result가 null이 아니면 리스트에 추가
                 cal.addResultList(result);
             }
 
             System.out.println("연산 결과 리스트: " + cal.getList());  // 게터 외부 호출
 
-            System.out.println("연산 결과를 삭제하시려면 del을 삭제할 연산 결과가 없다면 skip을 입력해 주세요. ");
+            System.out.println("연산 결과를 삭제하시려면 del을 삭제할 연산 결과가 없다면 skip을 입력해 주세요. ");    // 연산 결과 삭제 여부 입력받기
             String delSkip = sc.next();
 
-            if(delSkip.equals("del")) {
-                cal.deleteList();
-                System.out.println("삭제한 후 연산 결과 리스트: " + cal.getList());
+            if(delSkip.equals("del")) {             // 만약 "del"을 입력받으면
+                cal.deleteList();                   // deleteList()를 호출해 index(0)번 result값 삭제
+                System.out.println("삭제한 후 연산 결과 리스트: " + cal.getList());    // 삭제한 후 리스트 한번 더 출력
             }
 
             while (true) {
